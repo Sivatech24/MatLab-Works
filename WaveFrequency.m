@@ -1,0 +1,20 @@
+N =1024;
+f = 1;
+fs = 200;
+n = 0:N-1;
+x = sin(2*pi*f*n/fs);
+t = (0:N-1)/fs;
+
+subplot(2, 1, 1);
+plot(t, x);
+title('Sine Wave Of frequency 1000Hz');
+xlabel('Time [s]');
+ylabel('Amplitude');
+grid on;
+Rxx = xcorr(c);
+subplot(2, 1, 2);
+plot(-N+1:N-1, Rxx);
+title('Autocorrelation of SineWave');
+xlabel('Lags');
+ylabel('Autocorrelation');
+grid on;
